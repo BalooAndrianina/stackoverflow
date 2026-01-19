@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StackOverFlow</string>
+    <string name="not_answered_questions">Only not answered questions </string>
+    <string name="answer_count">%d</string>
+</resources>
