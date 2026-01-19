@@ -26,6 +26,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import fr.mastersid.stackoverflow.data.Question
+import fr.mastersid.stackoverflow.ui.QuestionsScreen
 import fr.mastersid.stackoverflow.ui.theme.StackOverFlowTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,60 +41,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun QuestionsScreen(modifier: Modifier){
-    var notAnswered : Boolean by rememberSaveable { mutableStateOf(false) }
-    val questionList = listOf(
-        Question(1, "Comment faire du bacon?", 6),
-        Question(2, "Comment manger du poulet sans se tacher", 0),
-        Question(3, "Comment tuer le papillon", 6),
-    )
-
-    Scaffold(
-        modifier = modifier,
-        bottomBar = {
-            Row() {
-                Text(
-                    stringResource(id = R.string.not_answered_questions)
-                )
-                Switch(
-                    checked = notAnswered,
-                    onCheckedChange = { checked -> notAnswered = checked }
-                )
-            }
-        }
-    ){ innerPadding ->
-        LazyColumn(
-            modifier = Modifier.padding(innerPadding),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ){
-            items(questionList){ question ->
-                QuestionRow(question)
-            }
-        }
-    }
-}
-
-@Composable
-fun QuestionRow(question: Question){
-    Row(horizontalArrangement = Arrangement.spacedBy(16.dp)){ //espace entre les éléments
-        Text(
-            text = question.title,
-            maxLines = 1, //pas de retour à la ligne
-            overflow = TextOverflow.Ellipsis, //pointillés si trop long
-            modifier = Modifier.weight(1f) //prend le max de place, le plus long possible
-        )
-        Text(
-            text = stringResource(id = R.string.answer_count, question.answerCount)
-        )
-    }
-}
-
-@Preview(widthDp = 400, showBackground = true)
-@Composable
-fun QuestionRowPreview() {
-    StackOverFlowTheme {
-        QuestionRow(Question(1, "Comment faire du bacon?", 6))
-    }
-}
