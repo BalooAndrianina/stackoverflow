@@ -57,14 +57,13 @@ fun QuestionsScreen(modifier: Modifier){
     Scaffold(
         modifier = modifier,
         bottomBar = {
-            Row() {
-                Text(
-                    stringResource(id = R.string.not_answered_questions)
-                )
-                Switch(
-                    checked = notAnswered,
-                    onCheckedChange = { checked -> notAnswered = checked }
-                )
+            NotAnsweredSwitch(
+                modifier = Modifier.padding(horizontal = 16.dp),
+                notAnswered = notAnswered
+            ) {
+                checked ->
+                notAnswered = checked
+
             }
         }
     ){ innerPadding ->
