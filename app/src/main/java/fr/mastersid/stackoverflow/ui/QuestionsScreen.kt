@@ -3,7 +3,10 @@ package fr.mastersid.stackoverflow.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
@@ -58,7 +61,11 @@ fun QuestionsScreen(modifier: Modifier){
         modifier = modifier,
         bottomBar = {
             NotAnsweredSwitch(
-                modifier = Modifier.padding(horizontal = 16.dp),
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .padding(bottom = WindowInsets.safeDrawing
+                        .asPaddingValues()
+                        .calculateBottomPadding()),
                 notAnswered = notAnswered
             ) {
                 checked ->

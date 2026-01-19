@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             StackOverFlowTheme {
-                QuestionsScreen(modifier = Modifier.safeDrawingPadding())
+                QuestionsScreen(modifier = Modifier.fillMaxSize())
             }
         }
     }
