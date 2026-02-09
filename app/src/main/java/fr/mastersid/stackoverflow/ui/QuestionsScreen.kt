@@ -29,7 +29,8 @@ import fr.mastersid.stackoverflow.ui.theme.StackOverFlowTheme
 @Composable
 fun QuestionsScreen(modifier: Modifier){
     var notAnswered : Boolean by rememberSaveable { mutableStateOf(false) }
-    val questionList = listOf(
+
+    val questionListAll = listOf(
         Question(1, "Pourquoi ma requête SQL retourne NULL alors que la colonne n’est pas vide ?", 6),
         Question(2, "Comment inverser une liste en Python sans utiliser reverse() ?", 0),
         Question(3, "Pourquoi mon CSS ne s’applique pas malgré !important ?", 4),
@@ -55,7 +56,13 @@ fun QuestionsScreen(modifier: Modifier){
         Question(23, "Pourquoi mon composant React se re-render en boucle ?", 7),
         Question(24, "Comment créer une clé étrangère en SQL ?", 0),
         Question(25, "Pourquoi mon push Git est rejeté (non-fast-forward) ?", 8)
-        )
+    )
+
+    val questionList = if (notAnswered){
+        questionListAll.filter{it.answerCount == 0}
+    }else{
+        questionListAll
+    }
 
     Scaffold(
         modifier = modifier,
