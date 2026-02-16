@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    //ksp TP2
+    alias(libs.plugins.kotlin.ksp)
+    //hilt TP2
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -57,4 +61,10 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    //Hilt TP2
+    implementation(libs.dagger.hilt.android)
+
+    //ksp hiltTP2
+    ksp(libs.dagger.hilt.compiler)
 }
