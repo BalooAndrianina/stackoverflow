@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId = "fr.mastersid.stackoverflow"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -75,4 +75,8 @@ dependencies {
 
     //ksp hiltTP2
     ksp(libs.dagger.hilt.compiler)
+
+    //viewmodel
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
