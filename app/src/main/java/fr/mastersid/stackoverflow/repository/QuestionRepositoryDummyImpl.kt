@@ -15,7 +15,7 @@ class QuestionRepositoryDummyImpl @Inject constructor() : QuestionRepository{
 
     override suspend fun updateQuestionInfo() {
         questionResponse.emit(QuestionResponse.Pending)
-        delay(1000)
+        delay(3000)
         questionResponse.emit(
             QuestionResponse.Success(
                 listOf(
