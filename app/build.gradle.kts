@@ -79,4 +79,7 @@ dependencies {
     //viewmodel
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    //retrofit pour webservices
+    implementation(libs.retrofit)
 }
