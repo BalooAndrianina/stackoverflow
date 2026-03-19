@@ -82,4 +82,7 @@ dependencies {
 
     //retrofit pour webservices
     implementation(libs.retrofit)
+
+    implementation(libs.moshi.kotlin)
+    implementation(libs.retrofit.converter.moshi)
 }

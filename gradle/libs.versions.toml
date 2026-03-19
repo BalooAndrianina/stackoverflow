@@ -12,6 +12,9 @@ composeBom = "2024.09.00"
 lifecycleViewmodelCompose = "2.10.0"
 runtimeLiveData = "1.10.0"
 
+#convertisseur retrofit JSON
+moshi = "1.15.2"
+
 #ksp TP2
 kotlinKsp = "2.3.4"
 
@@ -47,6 +50,11 @@ dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", ve
 
 #retrofit(webservices)
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+
+#moshi
+moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
