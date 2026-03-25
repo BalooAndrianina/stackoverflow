@@ -83,6 +83,13 @@ dependencies {
     //retrofit pour webservices
     implementation(libs.retrofit)
 
+    //moshi
     implementation(libs.moshi.kotlin)
     implementation(libs.retrofit.converter.moshi)
+
+    //roomData base
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.ktx)
+
 }
