@@ -9,8 +9,8 @@ import fr.mastersid.stackoverflow.data.QuestionJson
 class QuestionMoshiAdapter {
     @FromJson
     fun fromJson(listQuestionJson: ListQuestionJson): List<Question>{
-        return listQuestionJson.list.map{questionJson ->
-            Question(questionJson.id, questionJson.title, questionJson.body, questionJson.answerCount)
+        return listQuestionJson.items.map{ questionJson ->
+            Question(questionJson.question_id, questionJson.title, questionJson.body, questionJson.answer_count)
         }
     }
 
