@@ -1,6 +1,7 @@
 package fr.mastersid.stackoverflow.repository
 
 import android.util.Log
+import fr.mastersid.stackoverflow.data.QuestionResponse
 import fr.mastersid.stackoverflow.webservices.StackOverFlowWebService
 import kotlinx.coroutines.flow.MutableSharedFlow
 import okio.IOException

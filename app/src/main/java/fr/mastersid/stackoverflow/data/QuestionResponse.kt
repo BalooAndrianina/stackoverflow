@@ -1,6 +1,4 @@
-package fr.mastersid.stackoverflow.repository
-
-import fr.mastersid.stackoverflow.data.Question
+package fr.mastersid.stackoverflow.data
 
 //reponses du repository
 sealed interface QuestionResponse {

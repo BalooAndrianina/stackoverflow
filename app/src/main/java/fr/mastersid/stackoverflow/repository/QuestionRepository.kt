@@ -1,5 +1,6 @@
 package fr.mastersid.stackoverflow.repository
 
+import fr.mastersid.stackoverflow.data.QuestionResponse
 import kotlinx.coroutines.flow.Flow
 
 interface QuestionRepository {

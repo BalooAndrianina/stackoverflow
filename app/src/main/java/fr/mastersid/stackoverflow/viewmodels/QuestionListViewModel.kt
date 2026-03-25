@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.mastersid.stackoverflow.data.Question
 import fr.mastersid.stackoverflow.repository.QuestionRepository
-import fr.mastersid.stackoverflow.repository.QuestionResponse
+import fr.mastersid.stackoverflow.data.QuestionResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
