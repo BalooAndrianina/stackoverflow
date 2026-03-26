@@ -1,9 +1,11 @@
-package fr.mastersid.stackoverflow.repository
+package fr.mastersid.stackoverflow.di
 
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import fr.mastersid.stackoverflow.repository.QuestionRepository
+import fr.mastersid.stackoverflow.repository.QuestionRepositoryImpl
 
 @Module
 @InstallIn(ViewModelComponent::class)
