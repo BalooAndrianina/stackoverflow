@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId = "fr.mastersid.stackoverflow"
-        minSdk = 23
+        minSdk = 24
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -89,7 +89,7 @@ dependencies {
 
     //roomData base
     implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
 }
